@@ -10,7 +10,7 @@ CREATE TABLE TB_USUARIO (
 -- Classe Áreas Agrícolas
 CREATE TABLE TB_AREA (
     id_area INT PRIMARY KEY,
-    tamanho_ha DECIMAL(10, 2) NOT NULL,
+    tamanho_ha DECIMAL(10, 2) NOT NULL, -- hectares
     localizacao VARCHAR(255) NOT NULL,
     tipo_cultivo VARCHAR(50)
 );
