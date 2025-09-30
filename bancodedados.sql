@@ -1,5 +1,5 @@
--- 1. Tabela para o cadastro de Usuários
--- Mapeia a classe Usuario (Para controle de acesso: Admin, Operador)
+-- Tabela para o cadastro de Usuários
+-- Classe Usuario
 CREATE TABLE TB_USUARIO (
     id_usuario INT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -7,8 +7,7 @@ CREATE TABLE TB_USUARIO (
     tipo_acesso VARCHAR(20) NOT NULL -- 'Admin' ou 'Operador'
 );
 
--- 2. Tabela para o cadastro de Áreas Agrícolas
--- Mapeia a classe AreaAgricola
+-- Classe Áreas Agrícolas
 CREATE TABLE TB_AREA (
     id_area INT PRIMARY KEY,
     tamanho_ha DECIMAL(10, 2) NOT NULL,
@@ -16,8 +15,8 @@ CREATE TABLE TB_AREA (
     tipo_cultivo VARCHAR(50)
 );
 
--- 3. Tabela para o cadastro de Drones
--- Mapeia a classe Drone (Contém os atributos de segurança/checklist)
+-- Tabela para o cadastro de Drones
+-- Classe Drone 
 CREATE TABLE TB_DRONE (
     id_drone INT PRIMARY KEY,
     modelo VARCHAR(50) NOT NULL,
@@ -27,15 +26,15 @@ CREATE TABLE TB_DRONE (
     sensores_funcionando BOOLEAN -- Simula o status do checklist
 );
 
--- 4. Tabela para as Missões de Voo
--- Mapeia a classe MissaoVoo (Contém as Associações com Drone, Area e Operador)
+-- Tabela para as Missões de Voo
+-- Classe MissaoVoo 
 CREATE TABLE TB_MISSAO (
     id_missao INT PRIMARY KEY,
     data DATE NOT NULL,
     horario_inicio TIME NOT NULL,
     horario_fim TIME NOT NULL,
     
-    -- Chaves Estrangeiras para as Associações
+    -- Chaves Estrangeiras
     fk_drone INT NOT NULL,
     fk_area INT NOT NULL,
     fk_operador INT NOT NULL,
@@ -46,8 +45,8 @@ CREATE TABLE TB_MISSAO (
     FOREIGN KEY (fk_operador) REFERENCES TB_USUARIO(id_usuario)
 );
 
--- 5. Tabela para os Dados Coletados
--- Mapeia a classe DadoColetado (Relacionamento de Composição com MissaoVoo)
+-- Tabela para os Dados Coletados
+-- Classe DadoColetado 
 CREATE TABLE TB_DADOS_COLETADOS (
     id_dado INT PRIMARY KEY,
     fk_missao INT NOT NULL, -- Chave Estrangeira
