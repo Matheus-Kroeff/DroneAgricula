@@ -38,7 +38,7 @@ public class Drone {
         return true;
     }
 
-    // 4. Getters (acesso controlado)
+    // Getters (acesso controlado)
     public int getId() {
         return id;
     }
@@ -47,7 +47,7 @@ public class Drone {
         return status;
     }
     
-    // 5. Setter (modificação controlada do status)
+    // Setter (modificação controlada do status)
     public void setStatus(String status) {
         this.status = status;
     }
