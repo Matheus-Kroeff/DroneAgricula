@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.time.LocalTime; // Para Time
 
 public class MissaoDAO {
+    // DAO = Data Access Object
 
     // Simulação da conexão com o banco de dados. 
     private Connection conexao; 
