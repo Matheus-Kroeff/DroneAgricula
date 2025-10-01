@@ -9,24 +9,29 @@ public class DadoColetado {
   private double umidade;    
   private double valorSensorSimulado;
 
-  public DadoColetado() {
-  }
+  public DadoColetado(int id, int fkMissao, String imagemURL, double temperatura, double umidade, double valorSensorSimulado) {
+        this.id = id;
+        this.fkMissao = fkMissao;
+        this.imagemURL = imagemURL;
+        this.temperatura = temperatura;
+        this.umidade = umidade;
+        this.valorSensorSimulado = valorSensorSimulado;
+    }
 
-  public void registrarDado() {
-  }
+ public void registrarDado() {
+        System.out.println("Dado ID " + this.id + " (Temp: " + this.temperatura + "°C) gerado pela Missão " + this.fkMissao + ".");
+    }
+    
+    // Getters
+    public int getId() {
+        return id;
+    }
 
+    public int getFkMissao() {
+        return fkMissao;
+    }
 
-
-  // Getters
-  public int getId() {
-      return id;
-  }
-
-  public int getFkMissao() {
-      return fkMissao;
-  }
-
-  public double getTemperatura() {
-      return temperatura;
-  }
+    public double getTemperatura() {
+        return temperatura;
+    }
 }
