@@ -16,7 +16,15 @@ public Class MissaoVoo {
   private AreaAgricola areaVoo;
   private Usuario operador; // O operador que agendou a missão
 
-  public MissaoVoo() }
+  // Construtor
+    public MissaoVoo(int id, LocalDate data, LocalTime inicio, LocalTime fim, Drone drone, AreaAgricola area, Usuario operador) {
+        this.id = id;
+        this.data = data;
+        this.horarioInicio = inicio;
+        this.horarioFim = fim;
+        this.droneUtilizado = drone;
+        this.areaVoo = area;
+        this.operador = operador;
     }
 
   public boolean validarNaoSobreposta() {
