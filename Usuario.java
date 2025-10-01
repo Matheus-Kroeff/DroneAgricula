@@ -1,5 +1,3 @@
-// Incompleto
-
 public class Usuario { 
 
    public static final String TIPO_ADMIN = "Administrador";
